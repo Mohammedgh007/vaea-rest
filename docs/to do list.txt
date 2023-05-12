@@ -1,0 +1,2 @@
+1- handle repeated emails in sign ups.
+2- verify before uploading tenant registration profile image.

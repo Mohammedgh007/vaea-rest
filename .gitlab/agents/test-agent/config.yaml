@@ -1,0 +1,5 @@
+gitops:
+  mainfest_projects:
+  - id: "/mohammedGH/vaea-rest"
+    paths:
+    -glob: '**/*.{yaml, yml, json}'

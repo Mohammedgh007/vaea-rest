@@ -1,0 +1,13 @@
+FROM node:18
+
+COPY ../ /rest/
+
+WORKDIR /rest/
+
+RUN rm -r node_modules
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD ["npm", "run", "start:test"]

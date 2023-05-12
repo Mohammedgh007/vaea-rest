@@ -1,0 +1,3 @@
+let the app run without nodemon.
+
+ctl a d

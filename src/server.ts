@@ -3,7 +3,7 @@
  */
 
 import express, {Express, Request, Response} from 'express';
-import { tenantRouter } from './presentation/routers/tenantRouter';
+import { setupTenantRouter, tenantRouter } from './presentation/routers/tenantRouter';
 import { configProject } from './config/configCoordinator';
 
 
@@ -11,9 +11,12 @@ const app: Express = express()
 
 // handle project configuration
 configProject()
+app.use(express.json())
+app.use(express.static("./uploads"))
 
 
 // setup routers
+setupTenantRouter()
 app.use("/tenants", tenantRouter)
 
 app.listen(process.env.PORT, ()=> {

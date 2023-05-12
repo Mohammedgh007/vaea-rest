@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    app: vaea-rest-test
+specs:
+  selector:
+    matchLabels:
+      app: vaea-rest-test
+  replicas: 2
+  tempalte:
+    metadata:
+      name: test-pod
+      labels:
+        app: vaea-rest-test
+    specs:
+      containers:
+        - name: rest-vaea
+          image: registry.gitlab.com/mohammedGH/vaea-rest:1.0
+          ports:
+            - containerPort: 3000
+      imagePullSecrets:
+        - name: registryKey
