@@ -14,7 +14,6 @@ export class FileUploader {
      * It must be called before calling the other methods
      */
     static setupFileUploader = () => {
-        console.log("innnn", process.env.ALLBABA_OSS)
         FileUploader.profileImagesBucket = new OSS({
             region: 'SAU(Riyadh)',
             accessKeyId: 'LTAI5t8nJbgcwhYoQmRLHbpn',  

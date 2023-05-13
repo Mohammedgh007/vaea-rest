@@ -10,7 +10,7 @@ export class DbConnectionManager {
     /**
      * It is used to initialize connection field and to setup the connection.
      */
-    static setupConnection = () => {
+    static setupConnection = async () => {
         DbConnectionManager.connection = mysql.createConnection({
             host     : process.env.DATABASE_HOST,
             user     : process.env.DATABASE_USER,
@@ -19,7 +19,7 @@ export class DbConnectionManager {
         });
 
         try {
-            DbConnectionManager.connection.connect();
+            await DbConnectionManager.connection.connect();
             console.log("connected successfully to the database")
         } catch(e) {
             console.log("could not connection to the database");

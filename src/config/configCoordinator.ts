@@ -12,9 +12,9 @@ import { FileUploader } from './fileUpload/fileUploader';
 /**
  * This method handles all the config in the project.
  */
-export const configProject = () => {
+export const configProject = async () => {
     configEnv()
-    DbConnectionManager.setupConnection()
+    await DbConnectionManager.setupConnection()
     EmailManager.setupEmail()
     FileUploader.setupFileUploader()
 }
