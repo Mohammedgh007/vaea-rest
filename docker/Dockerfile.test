@@ -4,8 +4,6 @@ COPY ../ /rest/
 
 WORKDIR /rest/
 
-RUN rm -r node_modules
-
 RUN npm install
 
 EXPOSE 8000
