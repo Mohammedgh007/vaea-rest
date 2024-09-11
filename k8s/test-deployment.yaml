@@ -17,7 +17,7 @@ specs:
     specs:
       containers:
         - name: rest-vaea
-          image: registry.gitlab.com/mohammedGH/vaea-rest:1.0
+          image: registry.gitlab.com/mohammedGH/vaea-rest:1.0  
           ports:
             - containerPort: 3000
       imagePullSecrets:

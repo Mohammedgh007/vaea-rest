@@ -12,6 +12,7 @@ export class SearchUnitsInputTenant {
     district: string | null
     bedrooms: number | null
     bathrooms: number | null
+    gender: string | null // must be either MALE or FEMALE
     sorting: number // it is either 0, 1, 2, or 3
     pager: number // starts from 0 then increment by 1
 
@@ -21,6 +22,7 @@ export class SearchUnitsInputTenant {
         district: string | null ,
         bedrooms: number | null,
         bathrooms: number | null,
+        gender: string | null,
         sorting: number,
         pager: number
     ) {
@@ -29,6 +31,7 @@ export class SearchUnitsInputTenant {
         this.district = (district) ? district : null
         this.bedrooms = (bedrooms) ? bedrooms : null
         this.bathrooms = (bathrooms) ? bathrooms : null
+        this.gender = (gender) ? gender : null
         this.sorting = sorting
         this.pager = pager
     }
@@ -41,6 +44,7 @@ export class SearchUnitsInputTenant {
             serviceFields.district,
             serviceFields.bedrooms,
             serviceFields.bathrooms,
+            serviceFields.gender,
             serviceFields.sorting,
             serviceFields.pager
         )

@@ -5,7 +5,7 @@ import { SendOTPRequestTenant } from "../../../presentation/requests/tenants/sen
  */
 export class SendOTPDtoInTenant {
     email_address: string
-    request_type: string // It must be either REGISTRATION or TERMINATION
+    request_type: string // It must be either REGISTRATION or TERMINATION or RESET_PASSWORD
     language_iso: string // It must be either en or ar 
 
     constructor(email_address: string, request_type: string, language_iso: string ) {

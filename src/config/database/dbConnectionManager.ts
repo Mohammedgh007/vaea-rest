@@ -5,21 +5,21 @@ import mysql from 'mysql2'
 
 export class DbConnectionManager {
 
-    static connection: mysql.Connection;
+    static connection: mysql.Pool;
 
     /**
      * It is used to initialize connection field and to setup the connection.
      */
     static setupConnection = async () => {
-        DbConnectionManager.connection = mysql.createConnection({
-            host     : process.env.DATABASE_HOST,
-            user     : process.env.DATABASE_USER,
-            password : process.env.DATABASE_PASSWORD,
-            database : process.env.DATABASE_NAME
-        });
-
-        try {
-            await DbConnectionManager.connection.connect();
+        try {console.log(process.env.DATABASE_PASSWORD, "ssssss")
+            DbConnectionManager.connection = mysql.createPool({
+                host     : process.env.DATABASE_HOST,
+                user     : process.env.DATABASE_USER,
+                password : process.env.DATABASE_PASSWORD,
+                database : process.env.DATABASE_NAME,
+                port     : Number(process.env.DATABASE_PORT)
+            });
+            //await DbConnectionManager.connection.connect();
             console.log("connected successfully to the database")
         } catch(e) {
             console.log("could not connection to the database");
@@ -33,7 +33,8 @@ export class DbConnectionManager {
      */
     static closeConnection = () => {
         try {
-            DbConnectionManager.connection.end();
+            //DbConnectionManager.connection.end();
+            DbConnectionManager.closeConnection();
             console.log("connected successfully to the database")
         } catch(e) {
             console.log("could not connection to the database");

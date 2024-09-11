@@ -33,6 +33,7 @@ export class RegisterRequestTenant {
     } 
 
     static mapJsonToRegisterRequestTenant(req: any): RegisterRequestTenant {
+        
         return new RegisterRequestTenant(req.body.first_name, 
             req.body.last_name, 
             req.body.gender,

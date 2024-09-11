@@ -8,7 +8,7 @@ export default class VerifyAndAddInputTenant {
     first_name: string
     last_name: string
     gender: string // either FEMALE or MALE 
-    profile_image: string = ""// keeps it "" if none
+    profile_image: any// optioal type File
     id_iqama_number: string
     email_address: string
     password: string
@@ -26,6 +26,7 @@ export default class VerifyAndAddInputTenant {
         this.first_name = first_name
         this.last_name = last_name
         this.gender = gender
+        this.profile_image = null
         this.id_iqama_number = id_iqama_number
         this.email_address = email_address
         this.password = password

@@ -6,7 +6,7 @@ import { SendOTPDtoInTenant } from "../../../business/dtoIn/tenants/sendOTPDtoIn
 export class SaveOTPCodeInputTenant {
 
     email_address: string
-    request_type: string // It must be either REGISTRATION or TERMINATION
+    request_type: string // It must be either REGISTRATION or TERMINATION or RESET_PASSWORD
 
     constructor(email_address: string, request_type: string) {
         this.email_address = email_address

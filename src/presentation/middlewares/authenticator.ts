@@ -33,13 +33,13 @@ export class Authenticator {
 
 
     static verifyToken = async (req: Request, res: Response, next: any) => {
-        // get the token value
-        const bearerHeader = req.headers["authorization"]
-        const bearer: string[] = bearerHeader?.split(" ") as string[]
-        const token = bearer[1];
-
-        // verify token
         try {
+            // get the token value
+            const bearerHeader = req.headers["authorization"]
+            const bearer: string[] = bearerHeader?.split(" ") as string[]
+            const token = bearer[1];
+
+            // verify token
             const payload: any = jwt.verify(token, process.env.JWT_SECRET_KEY as string)
             
             if (req.method === "GET") {
